@@ -1,0 +1,66 @@
+:root{
+  --bg:#f6f8fb;
+  --card:#fff;
+  --accent:#2b6cb0;
+  --muted:#6b7280;
+  --radius:12px;
+  --shadow: 0 4px 14px rgba(32,41,55,0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#fff);
+  min-height:100vh;
+  color:#0f172a;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  padding:24px;
+}
+
+header{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+h1{margin:0;font-size:1.25rem;color:var(--accent)}
+form#searchForm{display:flex;gap:8px;align-items:center}
+#cityInput{
+  padding:10px 12px;border-radius:8px;border:1px solid #e2e8f0;min-width:220px;
+}
+#unitsSelect{padding:8px;border-radius:8px;border:1px solid #e2e8f0}
+button[type="submit"]{
+  background:var(--accent);color:#fff;border:none;padding:9px 14px;border-radius:8px;cursor:pointer;
+}
+
+main{display:flex;flex-direction:column;gap:16px;max-width:980px;width:100%;margin-inline:auto}
+.card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.hidden{display:none}
+
+.current-grid{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.current-weather{display:flex;gap:12px;align-items:center}
+.weather-icon{font-size:48px}
+.temp{font-size:2rem;font-weight:600}
+.desc{color:var(--muted)}
+
+.current-meta{color:var(--muted);min-width:180px}
+
+.forecast-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:12px}
+.forecast-card{background:#f8fafc;padding:10px;border-radius:10px;text-align:center}
+.forecast-card .day{font-weight:600;margin-bottom:6px}
+.forecast-card .icon{font-size:28px;margin-bottom:6px}
+.forecast-card .temps{color:var(--muted)}
+
+#status{max-width:980px;margin-inline:auto;padding:8px;border-radius:10px;background:#fff8c4;color:#7a5800;border:1px solid #f1e6a8}
+
+footer{text-align:center;color:var(--muted);margin-top:8px}
+a{color:var(--accent)}
+@media (max-width:520px){
+  .temp{font-size:1.5rem}
+  .weather-icon{font-size:40px}
+}

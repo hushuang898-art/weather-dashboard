@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Weather Dashboard</h1>
+    <form id="searchForm">
+      <input id="cityInput" type="search" placeholder="Enter city (e.g. London)" required />
+      <select id="unitsSelect" aria-label="Units">
+        <option value="celsius">°C</option>
+        <option value="fahrenheit">°F</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main>
+    <section id="status" class="hidden"></section>
+
+    <section id="current" class="card hidden">
+      <h2 id="location"></h2>
+      <div class="current-grid">
+        <div class="current-weather">
+          <div id="weatherIcon" class="weather-icon">❓</div>
+          <div>
+            <div id="temperature" class="temp">--</div>
+            <div id="description" class="desc">--</div>
+          </div>
+        </div>
+        <div class="current-meta">
+          <div>Wind: <span id="wind">--</span></div>
+          <div>Time: <span id="time">--</span></div>
+          <div>Coordinates: <span id="coords">--</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="forecast" class="card hidden">
+      <h3>7-day Forecast</h3>
+      <div id="forecastGrid" class="forecast-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Data from <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a></small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
